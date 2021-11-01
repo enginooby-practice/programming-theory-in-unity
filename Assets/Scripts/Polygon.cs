@@ -4,13 +4,17 @@ using UnityEngine;
 
 public abstract class Polygon : MonoBehaviour {
   // backing fields
-  [SerializeField] protected string m_Name;
+  [SerializeField] protected string m_Color;
   [SerializeField] protected float m_EdgeLength;
 
-  // auto property
-  public string Name { get; private set; }
-
   // custom property w/ constraint & validation
+  public string Color {
+    get => m_Color;
+    protected set {
+      m_Color = value;
+    }
+  }
+
   public float EdgeLength {
     get => m_EdgeLength;
     set {
@@ -25,7 +29,7 @@ public abstract class Polygon : MonoBehaviour {
   }
 
   private void Greeting() {
-    Debug.Log("Hi! I'm " + name);
+    Debug.Log("Hi! I'm " + m_Color);
   }
 
   protected abstract float GetArea();

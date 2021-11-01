@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Square : Polygon {
   protected override float GetArea() {
-    return m_EdgeLength * m_EdgeLength;
+    return EdgeLength * EdgeLength;
   }
 }
